@@ -41,8 +41,9 @@ header .header-bold-text {
 
 header .header-text {
   margin: 1rem auto;
+  font-size: 1.1rem;
   color: var(--color-gray-blue);
-  max-width: 500px;
+  max-width: 600px;
 }
 
 /* cards */
