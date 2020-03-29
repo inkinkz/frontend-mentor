@@ -1,0 +1,128 @@
+:root {
+  --color-red: hsl(0, 78%, 62%);
+  --color-cyan: hsl(180, 62%, 55%);
+  --color-orange: hsl(34, 97%, 64%);
+  --color-blue: hsl(212, 86%, 64%);
+  --color-dark-blue: hsl(234, 12%, 34%);
+  --color-gray-blue: hsl(229, 6%, 66%);
+  --color-light-gray: hsl(0, 0%, 98%);
+  --desktop-width: 1440px;
+  --mobile-width: 375px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: var(--desktop-width);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.text-center {
+  text-align: center;
+}
+
+header h1 {
+  margin-top: 4rem;
+  color: var(--color-dark-blue);
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+
+header .header-bold-text {
+  display: block;
+  font-weight: 600;
+}
+
+header .header-text {
+  margin: 1rem auto;
+  color: var(--color-gray-blue);
+  max-width: 500px;
+}
+
+/* cards */
+
+.cards-container {
+  margin: 3rem auto;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards-container .card {
+  max-width: 350px;
+  height: 250px;
+  margin: 1rem;
+  border-top: 6px solid #fff;
+  border-radius: 8px;
+  box-shadow: 0px 10px 20px rgba(76, 78, 97, 0.342);
+}
+
+.cards-container .card .card-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--color-dark-blue);
+  padding: 2rem 0 0 2rem;
+}
+
+.cards-container .card .card-text {
+  padding: 0 2rem;
+  color: var(--color-gray-blue);
+  font-size: 0.8rem;
+}
+
+.cards-container .card .card-image {
+  padding: 2rem;
+  text-align: right;
+}
+
+#supervisor {
+  border-color: var(--color-cyan);
+}
+
+#team-builder {
+  border-color: var(--color-red);
+}
+
+#calculator {
+  border-color: var(--color-blue);
+}
+
+#karma {
+  border-color: var(--color-orange);
+}
+
+footer {
+  color: var(--color-gray-blue);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-blue);
+}
+
+@media screen and (max-width: 610px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header .header-text {
+    width: 300px;
+  }
+
+  footer {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (min-width: 1146px) {
+  .translate-y {
+    transform: translateY(50%);
+  }
+}
