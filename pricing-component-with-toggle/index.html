@@ -11,21 +11,124 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="./style.css" />
 
-    <title>Frontend Mentor | [Challenge Name Here]</title>
+    <title>Frontend Mentor | Pricing Component with Toggle</title>
   </head>
   <body>
-    Our Pricing Annually Monthly Basic &dollar;19.99 &dollar;199.99 500 GB
-    Storage 2 Users Allowed Send up to 3 GB Learn More Professional
-    &dollar;24.99 &dollar;249.99 1 TB Storage 5 Users Allowed Send up to 10 GB
-    Learn More Master &dollar;39.99 &dollar;399.99 2 TB Storage 10 Users Allowed
-    Send up to 20 GB Learn More
+    <div class="container">
+      <div class="pricing text-center">
+        <div class="title">
+          Our Pricing
+        </div>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+        <div class="price-selector">
+          <div class="slider-text">
+            Annually
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="switch" onClick="setPrice()" />
+            <span class="slider"></span>
+          </label>
+          <span class="slider-text">
+            Monthly
+          </span>
+        </div>
+      </div>
+
+      <div class="cards-container text-center">
+        <div class="white-card">
+          <div class="plan-text">
+            Basic
+          </div>
+          <div class="price-text" id="basic">
+            &dollar;199.99
+          </div>
+          <ul class="perk-list">
+            <li class="perk">
+              500 GB Storage
+            </li>
+            <li class="perk">
+              2 Users Allowed
+            </li>
+            <li class="perk">
+              Send up to 3 GB
+            </li>
+          </ul>
+          <div class="learn-more-button">
+            Learn More
+          </div>
+        </div>
+        <div class="purple-card">
+          <div class="plan-text">
+            Professional
+          </div>
+          <div class="price-text" id="professional">
+            &dollar;249.99
+          </div>
+          <ul class="perk-list">
+            <li class="perk">
+              1 TB Storage
+            </li>
+            <li class="perk">
+              5 Users Allowed
+            </li>
+            <li class="perk">
+              Send up to 10 GB
+            </li>
+          </ul>
+          <div class="learn-more-button">
+            Learn More
+          </div>
+        </div>
+        <div class="white-card">
+          <div class="plan-text">
+            Master
+          </div>
+          <div class="price-text" id="master">
+            &dollar;399.99
+          </div>
+          <ul class="perk-list">
+            <li class="perk">
+              2 TB Storage
+            </li>
+            <li class="perk">
+              10 Users Allowed
+            </li>
+            <li class="perk">
+              Send up to 20 GB
+            </li>
+          </ul>
+          <div class="learn-more-button">
+            Learn More
+          </div>
+        </div>
+      </div>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://www.github.com/inkinkz">inkinkz</a>.
+      </div>
     </div>
+
+    <script>
+      function setPrice() {
+        const basicPrice = document.getElementById("basic");
+        const proPrice = document.getElementById("professional");
+        const masterPrice = document.getElementById("master");
+        const priceToggle = document.getElementById("switch");
+        if (priceToggle.checked == true) {
+          basicPrice.textContent = "$19.99";
+          proPrice.textContent = "$24.99";
+          masterPrice.textContent = "$39.99";
+        } else {
+          basicPrice.textContent = "$199.99";
+          proPrice.textContent = "$249.99";
+          masterPrice.textContent = "$399.99";
+        }
+      }
+    </script>
   </body>
 </html>

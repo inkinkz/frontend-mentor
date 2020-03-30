@@ -10,18 +10,251 @@
     hsl(236, 72%, 79%),
     hsl(237, 63%, 64%)
   );
+  --desktop-width: 1440px;
 }
 
-.body {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.text-center {
+  text-align: center;
+}
+
+body {
+  background: var(--color-very-light-grayish-blue) url("./images/bg-top.svg")
+    no-repeat top right;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 15px;
 }
 
+body::after {
+  content: "";
+  background: url("./images/bg-bottom.svg") no-repeat bottom left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+
+.container {
+  max-width: var(--desktop-width);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: auto;
+}
+
+.pricing {
+  padding-top: 4rem;
+}
+
+.pricing .title {
+  font-size: 2rem;
+  color: var(--color-grayish-blue);
+}
+
+.pricing .price-selector {
+  height: 34px;
+  min-width: 350px;
+  margin: 2rem auto 1rem auto;
+  user-select: none;
+}
+
+.pricing .price-selector .slider-text {
+  display: inline-block;
+  line-height: 34px;
+  color: var(--color-light-grayish-blue);
+  padding: 0 1.25rem;
+}
+
+/* Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  line-height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-gradient);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.cards-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.white-card {
+  color: var(--color-dark-grayish-blue);
+  background: #fff;
+  width: 330px;
+  height: 450px;
+  border: none;
+  border-radius: 10px;
+}
+
+.purple-card {
+  color: #fff;
+  background: var(--color-gradient);
+  width: 350px;
+  height: 500px;
+  border: none;
+  border-radius: 10px;
+}
+
+.plan-text {
+  margin: 2rem auto 1rem auto;
+  font-size: 1.25rem;
+}
+
+.purple-card > .plan-text {
+  padding-top: 25px;
+}
+
+.white-card .plan-text {
+  color: var(--color-grayish-blue);
+}
+
+.price-text {
+  font-size: 4rem;
+}
+
+.perk-list {
+  margin-top: 2rem;
+  list-style: none;
+}
+
+.perk-list li {
+  width: 80%;
+  margin: auto;
+  padding: 1rem 0;
+}
+
+.white-card .perk-list li {
+  border-top: 1px solid rgba(179, 181, 198, 0.4);
+}
+
+.purple-card > .perk-list li {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.white-card .perk-list li:last-child {
+  border-bottom: 1px solid rgba(179, 181, 198, 0.4);
+}
+
+.purple-card > .perk-list li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.learn-more-button {
+  margin: 2rem auto;
+  height: 50px;
+  width: 80%;
+  border-radius: 8px;
+  line-height: 50px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.white-card > .learn-more-button {
+  background: var(--color-gradient);
+  color: #fff;
+}
+
+.white-card > .learn-more-button:hover {
+  border-color: var(--color-dark-grayish-blue);
+  color: hsl(237, 63%, 64%);
+}
+
+.purple-card > .learn-more-button {
+  background: #fff;
+  color: hsl(237, 63%, 64%);
+}
+
+.purple-card > .learn-more-button:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.learn-more-button:hover {
+  background: transparent;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
+  padding: 1rem 0;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 860px) {
+  .cards-container {
+    flex-direction: column;
+  }
+  .purple-card {
+    margin: 2rem auto;
+    padding: 0;
+    width: 330px;
+    height: 450px;
+  }
+
+  .purple-card > .plan-text {
+    margin-top: 0;
+  }
+
+  .white-card:first-child {
+    margin-top: 4rem;
+  }
+  .white-card:last-child {
+    margin-bottom: 1rem;
+  }
+  body::after {
+    width: 0;
+    height: 0;
+  }
 }
