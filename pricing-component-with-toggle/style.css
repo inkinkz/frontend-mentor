@@ -131,7 +131,18 @@ input:checked + .slider:before {
   width: 330px;
   height: 450px;
   border: none;
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  box-shadow: 0px 10px 30px rgba(179, 181, 198, 0.5);
+}
+
+.white-card:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.white-card:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .purple-card {
@@ -238,11 +249,16 @@ input:checked + .slider:before {
   .cards-container {
     flex-direction: column;
   }
+  .white-card {
+    border-radius: 10px;
+  }
+
   .purple-card {
     margin: 2rem auto;
     padding: 0;
     width: 330px;
     height: 450px;
+    box-shadow: 0px 10px 30px rgba(179, 181, 198, 0.5);
   }
 
   .purple-card > .plan-text {
