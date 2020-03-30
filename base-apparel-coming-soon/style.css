@@ -28,7 +28,7 @@
 
 .container {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .large {
@@ -61,7 +61,17 @@
   margin: 2rem 0;
   color: var(--color-desat-red);
   line-height: 2rem;
+  width: 80%;
+  min-width: 340px;
   max-width: 450px;
+}
+
+.small-image {
+  margin-top: 2rem;
+  background: url("./images/hero-mobile.jpg") no-repeat 0 0 / cover;
+  height: 350px;
+  width: 100vw;
+  display: none;
 }
 
 .main-image {
@@ -71,11 +81,14 @@
 
 form {
   position: relative;
+  width: 80%;
+  min-width: 340px;
   max-width: 450px;
 }
 
 .email-input {
   color: var(--color-dark-grayish-red);
+  background: transparent;
   padding: 20px 2rem;
   width: 100%;
   border: 1px solid rgba(206, 151, 151, 0.5);
@@ -140,6 +153,7 @@ form.invalid .error-text {
   color: var(--color-dark-grayish-red);
   text-align: center;
   font-size: 12px;
+  margin-top: 1rem;
   padding-bottom: 12px;
 }
 
@@ -148,29 +162,44 @@ form.invalid .error-text {
   text-decoration: none;
 }
 
-.small-image {
-  margin-top: 2rem;
-  background: url("./images/hero-mobile.jpg") no-repeat center center/cover;
-  width: 100vw;
-  /* height: auto; */
-  display: none;
-}
-
-@media (max-width: 878px) {
+@media screen and (max-width: 995px) {
   .logo {
+    margin: 2rem;
     text-align: left;
   }
-  .main-image {
-    display: none;
-  }
+
   .content {
-    margin-top: 3rem;
     align-items: center;
   }
+
+  .content .main-content h1 {
+    margin-top: 5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 3rem;
+    letter-spacing: 0.75rem;
+  }
+
+  .large {
+    font-size: 3rem;
+  }
+
   .main-content {
     padding: 0;
     margin: 0;
     text-align: center;
+  }
+
+  .content .main-content .text {
+    margin: 1rem auto;
+  }
+
+  form {
+    margin: 2rem auto;
+  }
+
+  .main-image {
+    display: none;
   }
 
   .small-image {
