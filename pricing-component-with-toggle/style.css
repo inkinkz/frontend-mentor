@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+
+:root {
+  --color-very-light-grayish-blue: hsl(240, 78%, 98%);
+  --color-light-grayish-blue: hsl(234, 14%, 74%);
+  --color-grayish-blue: hsl(233, 13%, 49%);
+  --color-dark-grayish-blue: hsl(232, 13%, 33%);
+  --color-gradient: linear-gradient(
+    135deg,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+}
+
+.body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

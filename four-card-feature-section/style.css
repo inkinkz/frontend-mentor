@@ -78,8 +78,9 @@ header .header-text {
 }
 
 .cards-container .card .card-text {
-  padding: 0 2rem;
+  padding: 1rem 2rem;
   color: var(--color-gray-blue);
+  line-height: 1.5rem;
   font-size: 0.8rem;
 }
 
