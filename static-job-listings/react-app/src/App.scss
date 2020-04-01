@@ -1,7 +1,4 @@
-$color-primary: hsl(180, 29%, 50%);
-$color-light-grayish-cyan: hsl(180, 31%, 95%);
-$color-dark-grayish-cyan: hsl(180, 8%, 52%);
-$color-very-dark-grayish-cyan: hsl(180, 14%, 20%);
+@import "./_colors.scss";
 
 * {
   margin: 0;
@@ -9,88 +6,30 @@ $color-very-dark-grayish-cyan: hsl(180, 14%, 20%);
   box-sizing: border-box;
 }
 
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .banner {
   position: relative;
   height: 156px;
   background: url("./shared/images/bg-header-desktop.svg");
   background-color: $color-primary;
+}
 
-  .search-bar {
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    top: 126px;
-    left: 10%;
-    width: 80%;
-    min-height: 60px;
-    margin: auto;
-    background: #fff;
-    border-radius: 4px;
-    z-index: 5;
-    box-shadow: 0px 5px 10px rgba(123, 142, 142, 0.3);
+.job-list {
+  flex: 1;
+  width: 100vw;
+}
 
-    .search-items-container {
-      display: flex;
-      flex-flow: row wrap;
-      padding: 1rem 0 0 2rem;
-
-      .search-item {
-        margin-bottom: 1rem;
-        margin-right: 1rem;
-        display: flex;
-        justify-content: space-between;
-        height: 30px;
-        color: $color-primary;
-        vertical-align: middle;
-        background: $color-light-grayish-cyan;
-        border-radius: 4px;
-        width: max-content;
-
-        .search-text {
-          display: inline;
-          padding: 0 10px;
-          align-self: center;
-          font-size: 12px;
-          font-weight: 700;
-        }
-
-        .remove-button {
-          color: #fff;
-          text-align: center;
-          background: $color-primary;
-          width: 30px;
-          height: 30px;
-          line-height: 32px;
-          font-size: 1rem;
-          border-top-right-radius: 4px;
-          border-bottom-right-radius: 4px;
-          cursor: pointer;
-
-          &:hover {
-            background: $color-very-dark-grayish-cyan;
-          }
-        }
-      }
-    }
-    .clear-button {
-      align-self: stretch;
-      display: flex;
-      align-items: baseline;
-
-      .clear-text {
-        padding-right: 2rem;
-        color: $color-dark-grayish-cyan;
-        margin: auto;
-        font-weight: 700;
-        font-size: 12px;
-        text-transform: uppercase;
-        cursor: pointer;
-
-        &:hover {
-          color: $color-primary;
-          text-decoration: underline;
-        }
-      }
-    }
-  }
+.attribution {
+  margin-bottom: 1rem;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  text-decoration: none;
+  color: hsl(228, 45%, 44%);
 }
