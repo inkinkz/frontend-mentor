@@ -1,0 +1,25 @@
+@import "./utilities";
+
+.main-header {
+  position: relative;
+  min-height: 96vh;
+  background: #fff;
+  // border: 1px solid $color-primary-violet;
+  overflow: hidden;
+}
+
+.link-shorten-container {
+  height: 168px;
+  position: absolute;
+  bottom: -84px;
+  background: $color-primary-violet
+    url("./shared/images/bg-shorten-desktop.svg") no-repeat center center/cover;
+  max-width: 1110px;
+  z-index: 5;
+}
+
+.statistics-container {
+  min-height: 1000px;
+  width: 100%;
+  background: hsl(230, 25%, 95%);
+}

@@ -1,0 +1,32 @@
+@import "../../utilities";
+
+.button {
+  //   margin-left: 40px;
+  border: none;
+  background: $color-primary-cyan;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  opacity: 1;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.small {
+  width: 105px;
+  height: 40px;
+  border-radius: 25px;
+  font-size: 15px;
+}
+
+.large {
+  width: 200px;
+  height: 55px;
+  border-radius: 35px;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-left: 0;
+}

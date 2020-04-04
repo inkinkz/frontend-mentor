@@ -45,7 +45,8 @@ const JobCard = (props: {
           <div className="job-image">
             {/* does not work !?
             Error: Cannot find module '../../shared/images/.....svg'
-          <img src={props.job.logo} alt="icon" /> */}
+          <img src={props.job.logo} alt="icon" /> 
+          <img src={require(props.job.logo)} alt="icon" /> */}
             <img src={props.src} alt="icon" />
           </div>
           <div className="company-info">
