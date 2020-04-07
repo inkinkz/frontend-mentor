@@ -26,7 +26,7 @@ const images = [
   Shortly,
   Insure,
   EyeCam,
-  TheAir
+  TheAir,
 ];
 
 export interface JobInfo {
@@ -50,7 +50,8 @@ const App = () => {
 
   const removeSearch = (term: string) => {
     const temp = [...searchList];
-    setSearchList(temp.filter(t => t !== term));
+    setSearchList(temp.filter((t) => t !== term));
+    setMargin("40px");
   };
 
   const addSearch = (term: string) => {

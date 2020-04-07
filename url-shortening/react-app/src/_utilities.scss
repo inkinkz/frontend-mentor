@@ -15,6 +15,11 @@ $color-dark-violet: hsl(260, 8%, 14%);
   overflow: visible;
 }
 
+.text-center {
+  text-align: center;
+  margin: auto;
+}
+
 .flex {
   display: flex;
 }

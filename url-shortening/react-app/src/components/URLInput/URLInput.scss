@@ -1,0 +1,40 @@
+@import "../../utilities";
+
+.link-shorten-container {
+  background: $color-primary-violet
+    url("../../shared/images/bg-shorten-desktop.svg") no-repeat center
+    center/cover;
+  height: 168px;
+  position: absolute;
+  // bottom: -84px;
+  // top: -84px;
+
+  top: 716px;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 3.5rem;
+  border-radius: 12px;
+
+  // margin: 2rem;
+  max-width: 1106px;
+
+  input {
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    padding: 2rem;
+    height: 3.5rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    flex: 1;
+
+    &::placeholder {
+      opacity: 0.8;
+    }
+  }
+}
