@@ -31,8 +31,7 @@ const URLInput = (props: {
       // show input error
       setErrorClass("error-text");
       setInputClass("link-input error");
-      updateSize();
-
+      // updateSize();
       // setContainerStyle({ top: "988px", height: "184px" });
     } else {
       // revert input back
@@ -55,22 +54,22 @@ const URLInput = (props: {
     }
   };
 
-  const updateSize = () => {
-    console.log("updateSize");
-    if (errorClass === "error-text") {
-      if (window.innerWidth < 979) {
-        setContainerStyle({ top: "988px", height: "184px" });
-      }
-    } else {
-      setContainerStyle({});
-    }
-  };
+  // const updateSize = () => {
+  //   console.log("updateSize");
+  //   if (errorClass === "error-text") {
+  //     if (window.innerWidth < 979) {
+  //       setContainerStyle({ top: "988px", height: "184px" });
+  //     }
+  //   } else {
+  //     setContainerStyle({});
+  //   }
+  // };
 
   // useEffect(() => {
   //   updateSize();
   // });
 
-  window.addEventListener("resize", updateSize);
+  // window.addEventListener("resize", updateSize);
 
   const onEnter = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.key === "Enter" || event.keyCode === 13) shortenLink();
