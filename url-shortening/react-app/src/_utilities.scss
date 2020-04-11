@@ -11,7 +11,6 @@ $color-dark-violet: hsl(260, 8%, 14%);
   max-width: 1170px;
   padding: 0 2rem;
   margin: auto;
-  overflow: hidden;
   overflow: visible;
 }
 
@@ -22,10 +21,14 @@ $color-dark-violet: hsl(260, 8%, 14%);
 
 .flex {
   display: flex;
-}
 
-.flex-column {
-  flex-direction: column;
+  &-column {
+    flex-direction: column;
+  }
+
+  &-center {
+    align-items: center;
+  }
 }
 
 .lead {
@@ -35,4 +38,14 @@ $color-dark-violet: hsl(260, 8%, 14%);
   line-height: 40px;
   color: $color-grayish-violet;
   max-width: 600px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 979px) {
+  .container {
+    padding: 0 1.5rem;
+  }
 }

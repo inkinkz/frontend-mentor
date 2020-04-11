@@ -1,13 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
+import { LinkPair } from "./shared/interfaces/interfaces";
 
 import NavBar from "./components/NavBar/NavBar";
 import Header from "./components/Header/Header";
 import URLInput from "./components/URLInput/URLInput";
+import ShortenedLinks from "./components/ShortenedLinks/ShortenedLinks";
+import StatCard from "./components/StatCard/StatCard";
+import Button from "./components/Button/Button";
+import Footer from "./components/MainFooter/MainFooter";
 
-// import Button from "./components/Button/Button";
+// Icons
+import BradRecognition from "./shared/images/icon-brand-recognition.svg";
+import DetailedRecords from "./shared/images/icon-detailed-records.svg";
+import FullyCustomizable from "./shared/images/icon-fully-customizable.svg";
+
+const stats = [
+  {
+    title: "Brand Recognition",
+    body:
+      "Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.",
+    src: BradRecognition,
+  },
+  {
+    title: "Detailed Records",
+    body:
+      "Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.",
+    src: DetailedRecords,
+  },
+  {
+    title: "Fully Customizable",
+    body:
+      "Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.",
+    src: FullyCustomizable,
+  },
+];
 
 const App = () => {
+  const [linksList, setLinksList] = useState<LinkPair[]>([]);
+
+  useEffect(() => {
+    const data = localStorage.getItem("linksList");
+    if (data) {
+      setLinksList(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("linksList", JSON.stringify(linksList));
+  });
+
   return (
     <React.Fragment>
       <header className="main-header">
@@ -16,51 +58,40 @@ const App = () => {
           <NavBar />
           {/* Header Content */}
           <Header />
-          {/* URL Shortener */}
-
-          {/* <div className="wrapper"> */}
-          {/* </div> */}
         </div>
       </header>
-      <URLInput />
+
+      {/* URL Shortener */}
+      <URLInput linksList={linksList} setLinksList={setLinksList} />
 
       <section className="statistics-container">
+        {/* Short URLs */}
+        <ShortenedLinks linksList={linksList} setLinksList={setLinksList} />
+
         <h1 className="section-title">
           Advanced Statistics
-          <span
-            className="lead text-center"
-            style={{
-              marginTop: "0.75rem",
-              fontSize: "1.1rem",
-              maxWidth: "500px",
-              lineHeight: "2rem",
-            }}
-          >
+          <span className="lead text-center title-description">
             Track how your links are performing across the web with our advanced
             statistics dashboard.
           </span>
         </h1>
-
         <div className="container flex cards-container">
-          <div className="brand-recog card">
-            <div className="card-title"> Brand Recognition</div>
-            Boost your brand recognition with each click. Generic links don’t
-            mean a thing. Branded links help instil confidence in your content.
-          </div>
-          <div className="cyan-line"></div>
-          <div className="detailed-records card">
-            <div className="card-title">Detailed Records</div>
-            Gain insights into who is clicking your links. Knowing when and
-            where people engage with your content helps inform better decisions.
-          </div>
-          <div className="cyan-line"></div>
-          <div className="fully-custom card">
-            <div className="card-title">Fully Customizable</div>
-            Improve brand awareness and content discoverability through
-            customizable links, supercharging audience engagement.
-          </div>
+          {stats.map((stat) => {
+            return (
+              <React.Fragment key={stat.title}>
+                <StatCard title={stat.title} body={stat.body} src={stat.src} />
+                <div className="cyan-line"></div>
+              </React.Fragment>
+            );
+          })}
         </div>
       </section>
+
+      <section className="boost-links flex flex-column flex-center">
+        <div className="boost-text">Boost your links today</div>
+        <Button className="large">Get Started</Button>
+      </section>
+      <Footer />
     </React.Fragment>
   );
 };

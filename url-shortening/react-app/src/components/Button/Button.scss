@@ -1,13 +1,13 @@
 @import "../../utilities";
 
 .button {
-  //   margin-left: 40px;
   border: none;
   background: $color-primary-cyan;
   color: rgba(255, 255, 255, 0.9);
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   opacity: 1;
+  outline: none;
   cursor: pointer;
 
   &:hover {
@@ -29,4 +29,10 @@
   font-size: 1.2rem;
   margin-top: 2rem;
   margin-left: 0;
+}
+
+@media (max-width: 979px) {
+  .large {
+    margin: 2rem auto;
+  }
 }

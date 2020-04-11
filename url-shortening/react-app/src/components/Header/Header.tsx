@@ -9,7 +9,7 @@ const Header = () => {
       <div className="flex flex-column">
         <h1 className="header-text">
           More than just shorter links
-          <span className="lead">
+          <span className="lead center">
             Build your brand’s recognition and get detailed insights on how your
             links are performing.
           </span>
