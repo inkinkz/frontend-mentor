@@ -43,6 +43,9 @@
   }
 
   .social-icons {
+    a {
+      color: transparent;
+    }
     .icon {
       display: inline-block;
       background-color: #fff;

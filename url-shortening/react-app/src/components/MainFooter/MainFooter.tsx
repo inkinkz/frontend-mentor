@@ -32,29 +32,17 @@ const MainFooter = () => {
           </ul>
         </div>
         <div className="social-icons">
-          <a
-            href="https://url-shortening.inkinkz.now.sh/"
-            className="icon facebook-icon"
-          >
-            {" "}
+          <a href="/#" className="icon facebook-icon">
+            Facebook
           </a>
-          <a
-            href="https://url-shortening.inkinkz.now.sh/"
-            className="icon twitter-icon"
-          >
-            {" "}
+          <a href="/#" className="icon twitter-icon">
+            Twitter
           </a>
-          <a
-            href="https://url-shortening.inkinkz.now.sh/"
-            className="icon pinterest-icon"
-          >
-            {" "}
+          <a href="/#" className="icon pinterest-icon">
+            Pinterest
           </a>
-          <a
-            href="https://url-shortening.inkinkz.now.sh/"
-            className="icon instagram-icon"
-          >
-            {" "}
+          <a href="/#" className="icon instagram-icon">
+            Instagram
           </a>
         </div>
       </div>
