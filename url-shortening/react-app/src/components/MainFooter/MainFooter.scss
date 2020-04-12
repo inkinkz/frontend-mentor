@@ -43,18 +43,6 @@
   }
 
   .social-icons {
-    // a {
-    //   height: 20px;
-    //   padding-left: 1.2rem;
-    //   &:hover {
-    //     color: $color-primary-cyan;
-    //     fill: $color-primary-cyan;
-    //   }
-    //   &:first-child {
-    //     padding: 0;
-    //   }
-    // }
-
     .icon {
       display: inline-block;
       background-color: #fff;
@@ -101,37 +89,22 @@
   color: $color-primary-cyan;
 }
 
-@media (min-width: 980px) and (max-width: 1168px) {
-  // .main-footer {
-  //   .social-icons {
-  //     .icon {
-  //       &:last-child {
-  //         padding: 0;
-  //         // padding-right: 2rem;
-  //       }
-  //     }
-  //     .instagram-icon {
-  //       max-width: 24px;
-  //       margin: 0;
-  //       margin-top: 1rem;
-  //     }
-  //   }
+@media (min-width: 995px) and (max-width: 1165px) {
   .main-footer {
     .social-icons {
-      a {
+      .icon {
         &:last-child {
-          padding: 0;
-          padding-right: 2rem;
-          img {
-            padding-top: 1rem;
-          }
+          max-width: 24px;
+          margin: 0;
+          margin-right: 2rem;
+          margin-top: 1rem;
         }
       }
     }
   }
 }
 
-@media (max-width: 979px) {
+@media (max-width: 994px) {
   .main-footer {
     height: max-content;
     text-align: center;
