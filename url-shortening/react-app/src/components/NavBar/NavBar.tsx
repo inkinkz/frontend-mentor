@@ -36,7 +36,7 @@ const NavBar = () => {
         </ul>
         {/* Hamburger Button */}
         <div className="menu" onClick={() => toggleMenu()}>
-          <img src={Menu} alt="menu" width="40px" height="40px" />
+          <img src={Menu} alt="menu" width="32px" height="32px" />
         </div>
       </nav>
       {/* Menu List */}
