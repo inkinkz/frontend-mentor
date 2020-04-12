@@ -32,16 +32,16 @@ const MainFooter = () => {
           </ul>
         </div>
         <div className="social-icons">
-          <a href="/#" className="icon facebook-icon">
+          <a href="/#facebook" className="icon facebook-icon">
             {" "}
           </a>
-          <a href="/#" className="icon twitter-icon">
+          <a href="/#twitter" className="icon twitter-icon">
             {" "}
           </a>
-          <a href="/#" className="icon pinterest-icon">
+          <a href="/#pinterest" className="icon pinterest-icon">
             {" "}
           </a>
-          <a href="/#" className="icon instagram-icon">
+          <a href="/#instagram" className="icon instagram-icon">
             {" "}
           </a>
         </div>

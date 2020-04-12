@@ -18,7 +18,7 @@ const NavBar = () => {
     <React.Fragment>
       <nav className="main-nav">
         <div className="flex">
-          <h1 className="logo">Shortly</h1>
+          <div className="logo">Shortly</div>
 
           <ul className="nav-links">
             <li className="link-item">Features</li>
