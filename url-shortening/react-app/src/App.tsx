@@ -91,7 +91,7 @@ const App = () => {
 
       {/* Boost */}
       <section className="boost-links flex flex-column flex-center">
-        <div className="boost-text">Boost your links today</div>
+        <h1 className="boost-text">Boost your links today</h1>
         <Button className="large">Get Started</Button>
       </section>
 

@@ -75,6 +75,7 @@ const URLInput = (props: {
   return (
     <div className={containerClass}>
       <input
+        title="shortener"
         value={link}
         className={inputClass}
         placeholder="Shorten a link here..."
