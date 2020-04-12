@@ -4,7 +4,7 @@ From [**Frontend Mentor**](https://www.frontendmentor.io/)
 
 ### Finished Challenges
 
-[**URL Shortening**](https://url-shortening.inkinkz.now.sh)
+[**URL shortening API landing page**](https://url-shortening.inkinkz.now.sh)
 
 [**Job Listings Challenge**](https://static-job-listings.inkinkz.now.sh)
 
