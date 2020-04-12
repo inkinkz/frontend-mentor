@@ -30,7 +30,10 @@
     justify-content: space-between;
 
     .original-link {
+      margin-right: 1rem;
+      white-space: nowrap;
       overflow: hidden;
+      text-overflow: ellipsis;
     }
     .short-link {
       padding-right: 2rem;

@@ -75,6 +75,8 @@ const App = () => {
             statistics dashboard.
           </span>
         </h1>
+
+        {/* Cards */}
         <div className="container flex cards-container">
           {stats.map((stat) => {
             return (
@@ -87,10 +89,13 @@ const App = () => {
         </div>
       </section>
 
+      {/* Boost */}
       <section className="boost-links flex flex-column flex-center">
         <div className="boost-text">Boost your links today</div>
         <Button className="large">Get Started</Button>
       </section>
+
+      {/* Footer */}
       <Footer />
     </React.Fragment>
   );

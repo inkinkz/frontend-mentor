@@ -8,7 +8,7 @@ const ShortenedLinks = (props: {
   linksList: LinkPair[];
   setLinksList: React.Dispatch<React.SetStateAction<LinkPair[]>>;
 }) => {
-  const clearLocalStorage = () => {
+  const clearLinks = () => {
     props.setLinksList([]);
   };
 
@@ -27,7 +27,7 @@ const ShortenedLinks = (props: {
         <Button
           className="large"
           style={{ marginTop: "2rem" }}
-          onClick={clearLocalStorage}
+          onClick={clearLinks}
         >
           Clear Links
         </Button>

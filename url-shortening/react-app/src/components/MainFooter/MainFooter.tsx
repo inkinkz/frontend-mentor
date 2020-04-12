@@ -1,11 +1,6 @@
 import React from "react";
 import "./MainFooter.scss";
 
-import FacebookIcon from "../../shared/images/icon-facebook.svg";
-import TwitterIcon from "../../shared/images/icon-twitter.svg";
-import PinterestIcon from "../../shared/images/icon-pinterest.svg";
-import InstagramIcon from "../../shared/images/icon-instagram.svg";
-
 const MainFooter = () => {
   return (
     <footer className="main-footer">
@@ -37,17 +32,17 @@ const MainFooter = () => {
           </ul>
         </div>
         <div className="social-icons">
-          <a href="/">
-            <img src={FacebookIcon} alt="fb" />
+          <a href="/" className="icon facebook-icon">
+            {" "}
           </a>
-          <a href="/">
-            <img src={TwitterIcon} alt="twitter" />
+          <a href="/" className="icon twitter-icon">
+            {" "}
           </a>
-          <a href="/">
-            <img src={PinterestIcon} alt="pinterest" />
+          <a href="/" className="icon pinterest-icon">
+            {" "}
           </a>
-          <a href="/">
-            <img src={InstagramIcon} alt="ig" />
+          <a href="/" className="icon instagram-icon">
+            {" "}
           </a>
         </div>
       </div>

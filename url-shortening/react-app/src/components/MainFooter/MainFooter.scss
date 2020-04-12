@@ -43,14 +43,45 @@
   }
 
   .social-icons {
-    a {
-      padding-left: 1.2rem;
+    // a {
+    //   height: 20px;
+    //   padding-left: 1.2rem;
+    //   &:hover {
+    //     color: $color-primary-cyan;
+    //     fill: $color-primary-cyan;
+    //   }
+    //   &:first-child {
+    //     padding: 0;
+    //   }
+    // }
+
+    .icon {
+      display: inline-block;
+      background-color: #fff;
+      width: 24px;
+      height: 24px;
+      margin-left: 1.2rem;
+      cursor: pointer;
       &:hover {
-        color: $color-primary-cyan;
+        background-color: $color-primary-cyan;
       }
       &:first-child {
-        padding: 0;
+        margin: 0;
       }
+    }
+
+    .facebook-icon {
+      mask: url("../../shared/images/icon-facebook.svg");
+    }
+    .twitter-icon {
+      height: 20px;
+      mask: url("../../shared/images/icon-twitter.svg");
+    }
+    .pinterest-icon {
+      mask: url("../../shared/images/icon-pinterest.svg");
+    }
+    .instagram-icon {
+      mask: url("../../shared/images/icon-instagram.svg");
     }
   }
 }
@@ -71,6 +102,20 @@
 }
 
 @media (min-width: 980px) and (max-width: 1168px) {
+  // .main-footer {
+  //   .social-icons {
+  //     .icon {
+  //       &:last-child {
+  //         padding: 0;
+  //         // padding-right: 2rem;
+  //       }
+  //     }
+  //     .instagram-icon {
+  //       max-width: 24px;
+  //       margin: 0;
+  //       margin-top: 1rem;
+  //     }
+  //   }
   .main-footer {
     .social-icons {
       a {

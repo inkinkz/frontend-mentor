@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./URLInput.scss";
 import Button from "../Button/Button";
 import { LinkPair } from "../../shared/interfaces/interfaces";
@@ -8,10 +8,29 @@ const URLInput = (props: {
   linksList: LinkPair[];
   setLinksList: React.Dispatch<React.SetStateAction<LinkPair[]>>;
 }) => {
+  const [errorText, setErrorText] = useState("Please add a link");
   const [errorClass, setErrorClass] = useState("hidden");
   const [inputClass, setInputClass] = useState("link-input");
-  const [containerStyle, setContainerStyle] = useState({});
+  const [containerClass, setContainerClass] = useState(
+    "link-shorten-container"
+  );
   const [link, setLink] = useState("");
+
+  const onEnter = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Enter" || event.keyCode === 13) shortenLink();
+  };
+
+  const setError = (show: boolean) => {
+    if (show) {
+      setErrorClass("error-text");
+      setInputClass("link-input error");
+      setContainerClass("link-shorten-container reposition");
+    } else {
+      setErrorClass("hidden");
+      setInputClass("link-input");
+      setContainerClass("link-shorten-container");
+    }
+  };
 
   const getShortLink = async (url: object) => {
     const response = await fetch(relink, {
@@ -27,56 +46,34 @@ const URLInput = (props: {
   };
 
   const shortenLink = async () => {
+    // Empty Input
     if (link.trim() === "") {
       // show input error
-      setErrorClass("error-text");
-      setInputClass("link-input error");
-      // updateSize();
-      // setContainerStyle({ top: "988px", height: "184px" });
+      setErrorText("Please add a link");
+      setError(true);
     } else {
       // revert input back
       if (errorClass === "error-text") {
-        setErrorClass("hidden");
-        setInputClass("link-input");
-        setContainerStyle({});
+        setError(false);
       }
 
       const url = { url: link.trim() };
       const hashid = await getShortLink(url);
+      // Valid Input URL
       if (hashid) {
         const state = [...props.linksList];
         state.push({ original: link, short: `https://rel.ink/${hashid}` });
         props.setLinksList(state);
         setLink("");
       } else {
-        alert("Invalid URL");
+        setErrorText("Invalid Link");
+        setError(true);
       }
     }
   };
 
-  // const updateSize = () => {
-  //   console.log("updateSize");
-  //   if (errorClass === "error-text") {
-  //     if (window.innerWidth < 979) {
-  //       setContainerStyle({ top: "988px", height: "184px" });
-  //     }
-  //   } else {
-  //     setContainerStyle({});
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   updateSize();
-  // });
-
-  // window.addEventListener("resize", updateSize);
-
-  const onEnter = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === "Enter" || event.keyCode === 13) shortenLink();
-  };
-
   return (
-    <div className="link-shorten-container" style={containerStyle}>
+    <div className={containerClass}>
       <input
         value={link}
         className={inputClass}
@@ -84,7 +81,7 @@ const URLInput = (props: {
         onChange={(e) => setLink(e.target.value)}
         onKeyDown={(e) => onEnter(e)}
       />
-      <div className={errorClass}>Please add a link</div>
+      <div className={errorClass}>{errorText}</div>
       <Button
         className="large"
         style={{
