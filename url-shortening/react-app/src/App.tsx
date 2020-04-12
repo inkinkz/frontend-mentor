@@ -66,38 +66,32 @@ const App = () => {
 
       <section className="statistics-container">
         {/* Short URLs */}
-        <div>
-          <ShortenedLinks linksList={linksList} setLinksList={setLinksList} />
-          <h1 className="section-title">
-            Advanced Statistics
-            <span className="lead text-center title-description">
-              Track how your links are performing across the web with our
-              advanced statistics dashboard.
-            </span>
-          </h1>
+        <ShortenedLinks linksList={linksList} setLinksList={setLinksList} />
+        <h2 className="section-title">
+          Advanced Statistics
+          <span className="lead text-center title-description">
+            Track how your links are performing across the web with our advanced
+            statistics dashboard.
+          </span>
+        </h2>
 
-          {/* Cards */}
-          <div className="container flex cards-container">
-            {stats.map((stat) => {
-              return (
-                <React.Fragment key={stat.title}>
-                  <StatCard
-                    title={stat.title}
-                    body={stat.body}
-                    src={stat.src}
-                  />
-                  <div className="cyan-line"></div>
-                </React.Fragment>
-              );
-            })}
-          </div>
+        {/* Cards */}
+        <div className="container flex cards-container">
+          {stats.map((stat) => {
+            return (
+              <React.Fragment key={stat.title}>
+                <StatCard title={stat.title} body={stat.body} src={stat.src} />
+                <div className="cyan-line"></div>
+              </React.Fragment>
+            );
+          })}
         </div>
       </section>
 
       {/* Boost */}
       <section className="boost-links flex flex-column flex-center">
-        <h1 className="boost-text">Boost your links today</h1>
         <div>
+          <h2 className="boost-text">Boost your links today</h2>
           <Button className="large">Get Started</Button>
         </div>
       </section>
